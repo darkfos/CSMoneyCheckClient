@@ -1,6 +1,7 @@
+import "../../index.css"
 
 function CustomBtn({text, icon="", style=""}) {
-    return <button variant="contained" className={style}>{text}</button>
+    return <button className={style}>{text}</button>
 }
 
 export default CustomBtn;

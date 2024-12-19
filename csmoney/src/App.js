@@ -163,7 +163,7 @@ function App() {
           <div className="flex flex-col gap-6">
             <h2 className={colorTheme === "primary" ? "text-white font-bold text-3xl" : "font-bold"}>Ready to dive in?</h2>
             <p className={colorTheme === "primary" ? "text-white text-md font-bold" : ""}> Sign in with your Steam account to get started. After signing in, you get an API key that you can use to access our Steam API. Its free and easy to use. What are you waiting for? </p>
-            <CustomBtn text="Login" style="bg-white text-primary_text w-4/12 rounded-md p-2"/>
+            <CustomBtn text="Login" style="transition ease-in-out delay-150 bg-white hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 text-primary_text w-4/12 rounded-md p-2"/>
           </div>
           <img src={Cs3Image} className="w-11/12 rounded-t-lg relative left-10 top-10"/>
         </div>

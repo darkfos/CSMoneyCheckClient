@@ -6,6 +6,7 @@ import "./index.css";
 
 // Pages
 import App from './App';
+import DocsPage from './pages/DocsPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +20,7 @@ root.render(
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App />} />
-                <Route path='/docs' element={<App />} />
+                <Route path='/docs' element={<DocsPage />} />
                 <Route path='/blogs' element={<App />} />
                 <Route path='/profile' element={<App />} />
             </Routes>

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.accordion_light_theme {
+    background-color: #10b981 !important;
+    color: white !important;
+    font-weight: bold;
+}

@@ -28,7 +28,10 @@ class HeaderComponent extends Component {
                         <Link to="/blogs" className={this.colorTheme === "primary"? "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"}>Blogs</Link>
                     </li>
                     <li>
-                        <Link to="/profile" className={this.colorTheme === "primary"? "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"}>Profile</Link>
+                        <Link to="/item" className={this.colorTheme === "primary"? "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"}>Items</Link>
+                    </li>
+                    <li>
+                        <Link to="/reviews" className={this.colorTheme === "primary"? "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"}>Reviews</Link>
                     </li>
                     <li></li>
                     <li></li>

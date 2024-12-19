@@ -9,6 +9,7 @@ import IconBlog from "./static/images/comment-alt-edit_9821493.png"
 import IConGun from "./static/images/gun_750067.png"
 import Cs3Image from "./static/images/CS2-3.jpg"
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import FooterComponent from "./compontents/footer/FooterComponent";
 import CustomBtn from "./compontents/buttons/CustomButton";
 import "./static/styles/index.css"
 
@@ -167,6 +168,7 @@ function App() {
           <img src={Cs3Image} className="w-11/12 rounded-t-lg relative left-10 top-10"/>
         </div>
       </main>
+      <FooterComponent />
     </Fragment>
   );
 }

@@ -11,6 +11,7 @@ import Cs3Image from "./static/images/CS2-3.jpg"
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import FooterComponent from "./compontents/footer/FooterComponent";
 import CustomBtn from "./compontents/buttons/CustomButton";
+import AuthModal from "./compontents/modals/AuthModal";
 import "./static/styles/index.css"
 
 
@@ -169,6 +170,7 @@ function App() {
         </div>
       </main>
       <FooterComponent />
+      <AuthModal />
     </Fragment>
   );
 }

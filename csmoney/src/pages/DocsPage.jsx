@@ -12,6 +12,7 @@ class DocsPage extends Component {
 
 
     render () {
+        localStorage.setItem("page", "docs");
         return <Fragment>
             <HeaderComponent />
             <div className="mt-32 flex flex-row">

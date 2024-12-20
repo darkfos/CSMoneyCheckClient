@@ -11,6 +11,7 @@ class BlogsPage extends Component {
     }
 
     render() {
+        localStorage.setItem("page", "blogs");
         return <Fragment>
             <HeaderComponent />
             <div className="w-11/12 m-auto mt-40 flex flex-col gap-20">

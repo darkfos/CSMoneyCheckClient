@@ -13,6 +13,7 @@ class ReviewsPage extends Component {
     }
 
     render() {
+        localStorage.setItem("page", "reviews");
         return <Fragment>
             <HeaderComponent />
             <div className="mt-40 w-10/12 m-auto">

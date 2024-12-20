@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "./index.css";
+import store from "./store/storeRedux";
 import { Provider } from 'react-redux';
 
 
@@ -10,7 +11,7 @@ import App from './App';
 import DocsPage from './pages/DocsPage';
 import ReviewsPage from './pages/ReviewsPage';
 import BlogsPage from './pages/BlogsPage';
-import store from "./store/storeRedux";
+import ItemsPage from './pages/ItemsPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Set Theme
@@ -28,6 +29,7 @@ root.render(
                     <Route path='/blogs' element={<BlogsPage />} />
                     <Route path='/reviews' element={<ReviewsPage />} />
                     <Route path='/profile' element={<ReviewsPage />} />
+                    <Route path="/items" element={<ItemsPage />} />
                 </Routes>
             </BrowserRouter>
         </React.StrictMode>

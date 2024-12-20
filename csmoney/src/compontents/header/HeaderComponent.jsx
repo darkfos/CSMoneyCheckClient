@@ -97,7 +97,7 @@ const mapStateToProps = (state) => ({
 
 const mapDisptachToProps = {
     setModal, getModal
-}
+};
 
 
 export default connect(mapStateToProps, mapDisptachToProps)(HeaderComponent);

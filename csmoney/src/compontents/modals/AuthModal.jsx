@@ -2,19 +2,23 @@ import { Modal, TextField } from "@mui/material";
 import { useState } from "react";
 import AuthImage from "../../static/images/logo.png";
 import CustomBtn from "../buttons/CustomButton";
+import { useDispatch } from "react-redux";
+import { setModal } from "../../store/authSlice";
 
 
 function AuthModal({open}) {
 
-    const [modalOpen, setModal] = useState(open);
+    const [modalOpen, setMod] = useState(open);
     const [password, setPassword] = useState(null);
     const [email, setEmail] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
+    const dispatcher = useDispatch();
 
     const theme = localStorage.getItem("theme");
 
     let closeModal = (e) => {
-        setModal(false);
+        setMod(false);
+        dispatcher(setModal(false));
     }
 
     return <Modal

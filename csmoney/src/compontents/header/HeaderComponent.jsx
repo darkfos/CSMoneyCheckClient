@@ -2,6 +2,7 @@ import { Component, useState } from "react";
 import Logo from "../../static/images/logo.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { setModal, getModal } from "../../store/authSlice";
 import AuthModal from "../modals/AuthModal";
 
 
@@ -11,7 +12,7 @@ class HeaderComponent extends Component {
 
         this.colorTheme = localStorage.getItem("theme");
         this.pageNow = localStorage.getItem("page");
-        this.modal = false;
+        this.isOpenModal = false;
     }
 
     setLocaleStorageData(data) {
@@ -21,7 +22,6 @@ class HeaderComponent extends Component {
     render() {
         
         const {auth} = this.props;
-
         const page = (
             <header className="w-11/12 m-auto mt-6">
                 <nav className="flex flex-row list-none justify-left items-center gap-12">
@@ -30,7 +30,9 @@ class HeaderComponent extends Component {
                     </li>
                     <li></li>
                     <li>
-                        <Link to="/" id="main" className={this.colorTheme === "primary" ? this.pageNow === "main" ? "bg-primary_bg rounded-md text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"}>Home</Link>
+                        <Link to="/" id="main" className={this.colorTheme === "primary" ? this.pageNow === "main" ? "bg-primary_bg rounded-md text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"} onClick={(e) => {
+                            this.setLocaleStorageData("main");
+                        }}>Home</Link>
                     </li>
                     <li>
                         <Link to="/docs" id="docs" className={this.colorTheme === "primary"? this.pageNow === "docs" ? "bg-primary_bg rounded-md text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"} onClick={(e) => {
@@ -72,15 +74,15 @@ class HeaderComponent extends Component {
                     </li>
                     : 
                     <li>
-                        <Link to="/" className={this.colorTheme === "primary"? "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"} onClick={(e) => {
-                            e.preventDefault();
-                            this.modal = true;
+                        <Link to="#" className={this.colorTheme === "primary"? "text-primary_text p-3 border-none hover:bg-primary_bg hover:border-2 hover:rounded-md hover:p-3 hover:text-primary_text_hover" : "text-secondary"} onClick={(e) => {
+                            this.isOpenModal = !this.isOpenModal;
+                            this.props.setModal(this.isOpenModal);
                         }}>Authorization</Link>
-                        {<AuthModal open={this.modal} />}
                     </li>
                     }
                     <li className={this.colorTheme === "primary"? "text-primary_text" : "text-secondary"}>Theme</li>
                 </nav>
+                {auth.Modal && <AuthModal open={auth.Modal} />}
             </header>
         );
         
@@ -93,5 +95,9 @@ const mapStateToProps = (state) => ({
     auth: state.auth,
 });
 
+const mapDisptachToProps = {
+    setModal, getModal
+}
 
-export default connect(mapStateToProps)(HeaderComponent);
+
+export default connect(mapStateToProps, mapDisptachToProps)(HeaderComponent);

@@ -170,7 +170,6 @@ function App() {
         </div>
       </main>
       <FooterComponent />
-      <AuthModal />
     </Fragment>
   );
 }

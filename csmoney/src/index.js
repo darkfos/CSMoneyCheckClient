@@ -15,6 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Set Theme
 localStorage.setItem("theme", "primary");
+localStorage.setItem("page", "main");
 
 
 root.render(

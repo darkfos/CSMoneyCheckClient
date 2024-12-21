@@ -12,6 +12,7 @@ import DocsPage from './pages/DocsPage';
 import ReviewsPage from './pages/ReviewsPage';
 import BlogsPage from './pages/BlogsPage';
 import ItemsPage from './pages/ItemsPage';
+import ProfilePage from './pages/ProfilePage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Set Theme
@@ -28,7 +29,7 @@ root.render(
                     <Route path='/docs' element={<DocsPage />} />
                     <Route path='/blogs' element={<BlogsPage />} />
                     <Route path='/reviews' element={<ReviewsPage />} />
-                    <Route path='/profile' element={<ReviewsPage />} />
+                    <Route path='/profile' element={<ProfilePage />} />
                     <Route path="/items" element={<ItemsPage />} />
                 </Routes>
             </BrowserRouter>

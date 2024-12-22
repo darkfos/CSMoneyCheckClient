@@ -33,20 +33,13 @@ export const authSlice = createSlice({
             state.Modal = action.payload;
         },
 
-        getAccessToken(state) {
-            return state["Access-Token"];
-        },
-
-        getRefreshToken(state) {
-            return state["Refresh-Token"];
-        },
-
-        getModal(state) {
-            return state.Modal;
-        }
     }
 });
 
 
+export const getAccessToken = (state) => state.auth.accessToken;
+export const getRefreshToken = (state) => state.auth.refreshToken;
+export const getModal = (state) => state.auth.Modal;
+
 export default authSlice.reducer;
-export const {setAccessToken, setRefreshToken, getAccessToken, getRefreshToken, setModal, getModal} = authSlice.actions;
+export const {setAccessToken, setRefreshToken, setModal} = authSlice.actions;

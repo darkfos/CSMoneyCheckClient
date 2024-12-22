@@ -1,0 +1,11 @@
+version: 2
+authtoken: <> # Your ngrok token
+tunnels:
+  frontend:
+    addr: 3000 # Your front-end port application
+    proto: http
+    host_header: localhost
+  backend:
+    addr: 8000 # Your back-end port application
+    proto: http
+    host_header: localhost

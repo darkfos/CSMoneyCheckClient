@@ -2,7 +2,7 @@ import { Component, useState } from "react";
 import Logo from "../../static/images/logo.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { setModal, getModal } from "../../store/authSlice";
+import { setModal, getModal, setAccessToken, setRefreshToken } from "../../store/authSlice";
 import AuthModal from "../modals/AuthModal";
 
 
@@ -13,6 +13,22 @@ class HeaderComponent extends Component {
         this.colorTheme = localStorage.getItem("theme");
         this.pageNow = localStorage.getItem("page");
         this.isOpenModal = false;
+        this.setTokens = this.setTokens.bind(this);
+    }
+
+    setTokens() {
+        try {
+            
+            var access_token = document.cookie.split(" ")[0].split("=")[1].split(";")[0];
+            var refresh_token = document.cookie.split(" ")[1].split("=")[1].split(";")[0];
+            
+            this.props.setAccessToken(access_token);
+            this.props.setRefreshToken(refresh_token);
+
+        } catch {
+            access_token = false;
+            refresh_token = false;
+        }
     }
 
     setLocaleStorageData(data) {
@@ -21,6 +37,8 @@ class HeaderComponent extends Component {
 
     render() {
         
+        this.setTokens();
+
         const {auth} = this.props;
         const page = (
             <header className="w-11/12 m-auto mt-6">
@@ -96,7 +114,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDisptachToProps = {
-    setModal, getModal
+    setModal, getModal, setAccessToken, setRefreshToken
 };
 
 

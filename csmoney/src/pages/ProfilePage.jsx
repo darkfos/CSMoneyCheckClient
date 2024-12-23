@@ -27,33 +27,33 @@ class ProfilePage extends Component {
             <div className="mt-40 w-10/12 m-auto flex flex-col gap-20">
                 <header className="flex flex-row gap-20 items-center">
                     <img src={UsetAvatar} className="w-1/8 rounded-md" />
-                    <h3 className={this.theme === "primary" ? "text-primary font-bold text-2xl" : ""}>User name</h3>
+                    <h3 className={this.theme === "primary" ? "text-primary font-bold text-2xl" : "text-secondary_text font-bold text-2xl"}>User name</h3>
                 </header>
                 <div className="">
-                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : ""}>My information</h2>
+                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : "text-secondary_h_text font-bold text-3xl"}>My information</h2>
                     <br />
                     <div className="flex flex-row flex-wrap gap-5">
-                        <div className="flex flex-col gap-5 justify-left items-left p-5 bg-primary rounded-md text-white w-1/4">
+                        <div className={this.theme === "primary" ? "flex flex-col gap-5 justify-left items-left p-5 bg-primary rounded-md text-white w-1/4" : "flex flex-col gap-5 justify-left items-left p-5 bg-secondary_h_text rounded-md text-white w-1/4"}>
                             <h3 className={this.theme === "primary" ? "text-primary_text font-bold" : ""}>Used operation</h3>
                             <p>0</p>
                         </div>
-                        <div className="flex flex-col gap-5 justify-left items-left p-5 bg-primary rounded-md text-white w-1/4">
+                        <div className={this.theme === "primary" ? "flex flex-col gap-5 justify-left items-left p-5 bg-primary rounded-md text-white w-1/4" : "flex flex-col gap-5 justify-left items-left p-5 bg-secondary_h_text rounded-md text-white w-1/4"}>
                             <h3 className={this.theme === "primary" ? "text-primary_text font-bold" : ""}>Favourites</h3>
                             <p>0</p>
                         </div>
-                        <div className="flex flex-col gap-5 justify-left items-left p-5 bg-primary rounded-md text-white w-1/4">
+                        <div className={this.theme === "primary" ? "flex flex-col gap-5 justify-left items-left p-5 bg-primary rounded-md text-white w-1/4" : "flex flex-col gap-5 justify-left items-left p-5 bg-secondary_h_text rounded-md text-white w-1/4"}>
                             <h3 className={this.theme === "primary" ? "text-primary_text font-bold" : ""}>Date registration</h3>
                             <p>2024-12-12</p>
                         </div>
-                        <div className="flex flex-col gap-5 justify-left items-left p-5 bg-primary rounded-md text-white w-1/4">
+                        <div className={this.theme === "primary" ? "flex flex-col gap-5 justify-left items-left p-5 bg-primary rounded-md text-white w-1/4" : "flex flex-col gap-5 justify-left items-left p-5 bg-secondary_h_text rounded-md text-white w-1/4"}>
                             <h3 className={this.theme === "primary" ? "text-primary_text font-bold" : ""}>Email</h3>
                             <p>bla bla bla</p>
                         </div>
                     </div>
                     <br />
-                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : ""}>Other operation</h2>
+                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : "text-secondary_h_text font-bold text-3xl"}>Other operation</h2>
                     <br />
-                    <div className="flex flex-row gap-20 bg-primary rounded-md w-4/6">
+                    <div className={this.theme === "primary" ? "flex flex-row gap-20 bg-primary rounded-md w-4/6" : "flex flex-row gap-20 bg-secondary_h_text rounded-md w-4/6"} >
                         <div className="p-4 text-primary_text font-bold hover:text-primary_text_hover hover:delay-300 hover:duration-300 cursor-pointer" onClick={(e) => {
                             this.setState({ menuUser: "favourites"})
                         }}>Favourites</div>
@@ -78,23 +78,23 @@ class ProfilePage extends Component {
         switch (this.state.menuUser) {
             case "favourites": {
                 return <div>
-                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : ""}>Favourite options</h2>
-                    <h6 className={this.theme === "primary" ? "text-primary_text font-bold" : ""}>You can see all your favourites...</h6>
+                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : "text-secondary_h_text font-bold text-3xl"}>Favourite options</h2>
+                    <h6 className={this.theme === "primary" ? "text-primary_text font-bold" : "text-secondary_text font-bold"}>You can see all your favourites...</h6>
                     <br />
-                    <CustomBtn text="My favourites" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : ""} onclick={(e) => {
+                    <CustomBtn text="My favourites" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-secondary_h_text p-4 rounded-md text-primary_text_hover"} onclick={(e) => {
                         window.location.href = "/favourites";
                     }}/>
                 </div>
             }
             case "system": {
                 return <div>
-                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : ""}>System options</h2>
-                    <h6 className={this.theme === "primary" ? "text-primary_text font-bold" : ""}>You can change your password or username :]</h6>
+                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : "text-secondary_h_text font-bold text-3xl"}>System options</h2>
+                    <h6 className={this.theme === "primary" ? "text-primary_text font-bold" : "text-secondary_text font-bold"}>You can change your password or username :]</h6>
                     <br />
                     <div className="grid grid-cols-4 gap-40">
-                        <CustomBtn text="Change password" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : ""} onclick={(e) => {
+                        <CustomBtn text="Change password" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-secondary_h_text p-4 rounded-md text-primary_text_hover"} onclick={(e) => {
                         }}/>
-                        <CustomBtn text="Change username" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : ""} onclick={(e) => {
+                        <CustomBtn text="Change username" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-secondary_h_text p-4 rounded-md text-primary_text_hover"} onclick={(e) => {
                         }}/>
                     </div>
                 </div>
@@ -105,14 +105,14 @@ class ProfilePage extends Component {
                 }
 
                 return <div>
-                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : ""}>Other options</h2>
+                    <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl" : "text-secondary_h_text font-bold text-3xl"}>Other options</h2>
                     <br />
                     <Alert severity="warning" >You can delete your account!</Alert>
                     <br />
                     <div className="flex flex-row gap-10">
-                        <CustomBtn text="Delete" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : ""} onclick={(e) => {
+                        <CustomBtn text="Delete" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-secondary_h_text p-4 rounded-md text-primary_text_hover"} onclick={(e) => {
                         }}/>
-                        <CustomBtn text="Leave" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : ""} onclick={(e) => {
+                        <CustomBtn text="Leave" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-secondary_h_text p-4 rounded-md text-primary_text_hover"} onclick={(e) => {
                             document.cookie = 'access_token=; Path=/; Domain=localhost; Max-Age=-1;';
                             document.cookie = 'refresh_token=; Path=/; Domain=localhost; Max-Age=-1;';
                             window.location.href = "/";

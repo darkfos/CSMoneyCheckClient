@@ -37,7 +37,7 @@ class ItemsPage extends Component {
         return <Fragment>
             <HeaderComponent />
             <div className="mt-40 w-11/12 m-auto">
-                <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl text-center" : ""}>Check item data</h2>
+                <h2 className={this.theme === "primary" ? "text-primary font-bold text-3xl text-center" : "text-secondary_h_text font-bold text-3xl text-center"}>Check item data</h2>
                 <br />
                 <br />
                 <div className="w-8/12 m-auto flex flex-row justify-center gap-5">
@@ -61,7 +61,7 @@ class ItemsPage extends Component {
                         ))}
                     </TextField>
                     <TextField id="standard-basic" label="Item name" className="w-4/12"></TextField>
-                    <CustomBtn text="Find" style={this.theme === "primary" ? "bg-primary rounded-md h-3/4 p-4 w-1/4 text-white" : ""}/>
+                    <CustomBtn text="Find" style={this.theme === "primary" ? "bg-primary rounded-md h-3/4 p-4 w-1/4 text-white" : "bg-secondary_h_text rounded-md h-3/4 p-4 w-1/4 text-white"}/>
                 </div>
             </div>
             <FooterComponent />

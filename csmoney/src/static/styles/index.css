@@ -5,6 +5,12 @@
     font-weight: bold;
 }
 
+.accordion_night_theme {
+    background-color: #7e22ce !important;
+    color: white !important;
+    font-weight: bold;
+}
+
 
 .down_menu_primary {
     width: 100%;

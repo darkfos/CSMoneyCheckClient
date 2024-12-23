@@ -25,8 +25,10 @@ class ItemsPage extends Component {
             }
         ];
 
+        localStorage.setItem("market", this.markets[0].value);
+
         this.state = {
-            marketNow: "CSMarket"
+            marketNow: localStorage.getItem("market")
         };
     }
 
@@ -43,11 +45,11 @@ class ItemsPage extends Component {
                         id="standard-select-currency"
                         select
                         label="Select"
-                        value={localStorage.getItem("market") ? localStorage.getItem("market") : this.state.marketNow}
+                        value={this.state.marketNow}
                         onChange={(e) => {
-                            this.state.marketNow = e.target.value;
-                            localStorage.setItem("market", e.target.value);
-                            window.location.reload();
+                            this.setState({marketNow: e.target.value}, () => {
+                                localStorage.setItem("market", e.target.value);
+                            });
                         }}
                         helperText="Please select your market"
                         className="w-3/12 m-auto"

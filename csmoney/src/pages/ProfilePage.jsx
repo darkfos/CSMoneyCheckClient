@@ -109,8 +109,15 @@ class ProfilePage extends Component {
                     <br />
                     <Alert severity="warning" >You can delete your account!</Alert>
                     <br />
-                    <CustomBtn text="Delete" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : ""} onclick={(e) => {
-                    }}/>
+                    <div className="flex flex-row gap-10">
+                        <CustomBtn text="Delete" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : ""} onclick={(e) => {
+                        }}/>
+                        <CustomBtn text="Leave" style={this.theme === "primary" ? "transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary p-4 rounded-md text-primary_text_hover" : ""} onclick={(e) => {
+                            document.cookie = 'access_token=; Path=/; Domain=localhost; Max-Age=-1;';
+                            document.cookie = 'refresh_token=; Path=/; Domain=localhost; Max-Age=-1;';
+                            window.location.href = "/";
+                        }} />
+                    </div>
                 </div>
             }
         }

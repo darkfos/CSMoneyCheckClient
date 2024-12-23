@@ -18,8 +18,14 @@ import ProfilePage from './pages/ProfilePage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Set Theme
-localStorage.setItem("theme", "primary");
-localStorage.setItem("page", "main");
+
+if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", "primary");
+}
+
+if (!localStorage.getItem("page")) {
+    localStorage.setItem("page", "main");
+}
 
 
 root.render(

@@ -25,8 +25,9 @@ module.exports = {
         primary_text: "#374151",
         primary_ac_text: "#60A5FA",
         primary_text_hover: "#F3F4F6",
-        secondary: colors.indigo[500],
-        secondary_text: "#F3F4F6",
+        secondary: colors.slate[950],
+        secondary_text: colors.white,
+        secondary_h_text: colors.purple[700],
         secondary_text_hover: "",
       },
       backgroundColor: {

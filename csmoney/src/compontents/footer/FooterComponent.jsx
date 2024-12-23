@@ -1,7 +1,7 @@
 
 function FooterComponent() {
     const themeColor = localStorage.getItem("theme");
-    return <footer className={themeColor === "primary" ? "bg-primary mt-40 p-10" : "bg-secondary_h_text mt-40 p-10"}>
+    return <footer className={themeColor === "primary" ? "bg-primary mt-40 p-10" : "bg-secondary_footer_bg mt-40 p-10"}>
         <div className="flex flex-row gap-72 w-10/12 m-auto">
             <div>
                 <h2 className={themeColor === "primary" ? "text-white font-bold text-2xl": "text-secondary_text font-bold text-2xl"}>CSMONEY</h2>

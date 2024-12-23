@@ -32,7 +32,10 @@ module.exports = {
       },
       backgroundColor: {
         primary_bg: colors.emerald[500],
-        secondary_bg: colors.gray[500]
+        secondary_bg: colors.gray[500],
+        secondary_footer_bg: colors.purple[900],
+        secondary_button_bg: colors.yellow[500],
+        secondary_button_bg_hover: colors.orange[600]
       },
       backgroundImage: {
         "cs-pattern": "url('/src/static/images/cs_back.png')"

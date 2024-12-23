@@ -48,6 +48,7 @@ root.render(
                         </ProtectedRouter>
                     } />
                     <Route path="/items" element={<ItemsPage />} />
+                    <Route path="/*" element={<App />} />
                 </Routes>
             </BrowserRouter>
         </React.StrictMode>

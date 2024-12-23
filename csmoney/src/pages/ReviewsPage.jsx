@@ -30,7 +30,7 @@ class ReviewsPage extends Component {
                         <br />
                         <p>Bla bla</p>
                     </div>
-                    <CustomBtn text="Other" style={this.theme === "primary" ? "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary w-8/12 m-auto rounded-md text-white p-2" : "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-secondary_h_text w-8/12 m-auto rounded-md text-white p-2"}/>
+                    <CustomBtn text="Other" style={this.theme === "primary" ? "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-primary w-8/12 m-auto rounded-md text-white p-2" : "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary_ac_text hover:text-white duration-300 bg-secondary_button_bg w-8/12 m-auto rounded-md text-white p-2 delay-300 duration-300 transition ease-in-out hover:bg-secondary_button_bg_hover"}/>
                 </div>
             </div>
             <FooterComponent />

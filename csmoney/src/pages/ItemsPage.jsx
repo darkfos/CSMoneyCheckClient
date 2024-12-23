@@ -3,6 +3,7 @@ import HeaderComponent from "../compontents/header/HeaderComponent";
 import FooterComponent from "../compontents/footer/FooterComponent";
 import { TextField, MenuItem } from "@mui/material";
 import CustomBtn from "../compontents/buttons/CustomButton";
+import "../static/styles/index.css";
 
 
 class ItemsPage extends Component {
@@ -52,16 +53,69 @@ class ItemsPage extends Component {
                             });
                         }}
                         helperText="Please select your market"
-                        className="w-3/12 m-auto"
+                        sx={{
+                            '& label': {
+                                color: this.theme === "primary" ? "#374151": "white"
+                            },
+                            '& .MuiSelect-select': {
+                                color: this.theme === "primary" ? "#374151" : "white"
+                            },
+                            '& label.Mui-focused': {
+                              color: this.theme === 'primary' ? '#10b981' : '#7e22ce',
+                            },
+                            '& .MuiInput-underline:after': {
+                              borderBottomColor: this.theme === 'primary' ? '#10b981' : '#7e22ce',
+                            },
+                            '& .MuiOutlinedInput-root': {
+                              '& fieldset': {
+                                borderColor: this.theme === 'primary' ? '#10b981' : '#7e22ce',
+                              },
+                              '&:hover fieldset': {
+                                borderColor: this.theme === 'primary' ? '#10b981' : '#7e22ce',
+                              },
+                              '&.Mui-focused fieldset': {
+                                borderColor: this.theme === 'primary' ? '#10b981' : '#7e22ce',
+                              },
+                            },
+                          }}
                         >
                         {this.markets.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
+                            <MenuItem key={option.value} value={option.value} sx={{
+                                color: this.theme === "primary" ? "#374151" : "#7e22ce",
+                                '&.Mui-selected': {
+                                    color: this.theme === "primary" ? "#10b981" : "#7e22ce"
+                                },
+                                '&:hover': {
+                                    backgroundColor: this.theme === "primary" ? "#6ee7b7" : "#d8b4fe",
+                                }
+                            }}>
                             {option.label}
                             </MenuItem>
                         ))}
                     </TextField>
-                    <TextField id="standard-basic" label="Item name" className="w-4/12"></TextField>
-                    <CustomBtn text="Find" style={this.theme === "primary" ? "bg-primary rounded-md h-3/4 p-4 w-1/4 text-white" : "bg-secondary_h_text rounded-md h-3/4 p-4 w-1/4 text-white"}/>
+                    <TextField id="standard-basic" label="Item name" className="w-4/12" sx={{
+                        "& label": {
+                            color: this.theme === "primary" ? "#374151" : "white"
+                        },
+                        '& label.Mui-focused': {
+                            color: this.theme === 'primary' ? '#374151' : '#7e22ce',
+                        },
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                              borderColor: this.theme === 'primary' ? '#10b981' : '#7e22ce',
+                            },
+                            '&:hover fieldset': {
+                              borderColor: this.theme === 'primary' ? '#10b981' : '#7e22ce',
+                            },
+                            '&.Mui-focused fieldset': {
+                              borderColor: this.theme === 'primary' ? '#10b981' : '#7e22ce',
+                            },
+                        },
+                        '& .MuiInputBase-input': {
+                            color: this.theme === "primary"? "#374151" : "white"
+                        }
+                    }}></TextField>
+                    <CustomBtn text="Find" style={this.theme === "primary" ? "bg-primary rounded-md h-3/4 p-4 w-1/4 text-white delay-300 duration-300 transition ease-in-out hover:bg-primary_ac_text" : "bg-secondary_button_bg rounded-md h-3/4 p-4 w-1/4 text-white delay-300 duration-300 transition ease-in-out hover:bg-secondary_button_bg_hover"}/>
                 </div>
             </div>
             <FooterComponent />

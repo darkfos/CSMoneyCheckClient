@@ -27,6 +27,10 @@ if (!localStorage.getItem("page")) {
     localStorage.setItem("page", "main");
 }
 
+if (!localStorage.getItem("isVisit")) {
+    localStorage.setItem("isVisit", false);
+}
+
 
 root.render(
     <Provider store={store}>
